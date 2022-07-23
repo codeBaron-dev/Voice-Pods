@@ -6,7 +6,8 @@ package com.codebaron.voicepods.repository
  * @NoteForFutureMe This kotlin file holds all apis used in this project,
  * please be deliberate when making modifications to an api else something breaks
  */
-const val BASE_URL = "https://listen-api.listennotes.com/api/v2"
+const val LISTEN_NOTE_BASE_URL = "https://listen-api.listennotes.com/api/v2"
+const val RAPID_API_BASE_URL = "https://listennotes.p.rapidapi.com/api/v1/"
 const val FULL_TEXT_SEARCH = "search"
 const val TYPE_HEAD_SEARCH = "typeahead"
 const val TRENDING_SEARCHES = "trending_searches"
