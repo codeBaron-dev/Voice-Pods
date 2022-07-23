@@ -13,6 +13,13 @@ import retrofit2.http.Query
  */
 interface ApiEndPoint {
 
+    /**
+     * @param headers
+     * @param searchContent
+     * @param language
+     * @param safetyMode
+     * @return Podcasts
+     */
     @GET(FULL_TEXT_SEARCH)
     suspend fun searchPodcast(
         @HeaderMap headers: Map<String, String>,
@@ -21,6 +28,10 @@ interface ApiEndPoint {
         @Query("safe_mode", encoded = true) safetyMode: String,
     ): Response<Podcasts>
 
+    /**
+     * @param headers
+     * @return PodcastGenres
+     */
     @GET(GENRES)
     suspend fun getPodcastGenre(@HeaderMap headers: Map<String, String>): Response<PodcastGenres>
 }
