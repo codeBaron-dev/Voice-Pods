@@ -7,6 +7,10 @@ import retrofit2.http.GET
 import retrofit2.http.HeaderMap
 import retrofit2.http.Query
 
+/**
+ * @author Anyanwu Nicholas(codeBaron)
+ * @since Jul 23 - 2022
+ */
 interface ApiEndPoint {
 
     @GET(FULL_TEXT_SEARCH)

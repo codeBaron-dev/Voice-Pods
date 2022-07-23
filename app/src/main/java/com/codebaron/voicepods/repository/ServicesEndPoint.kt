@@ -1,7 +1,7 @@
 package com.codebaron.voicepods.repository
 
 /**
- * @author Anyanwu Nicholas
+ * @author Anyanwu Nicholas(codeBaron)
  * @since Jul 23 - 2022
  * @NoteForFutureMe This kotlin file holds all apis used in this project,
  * please be deliberate when making modifications to an api else something breaks

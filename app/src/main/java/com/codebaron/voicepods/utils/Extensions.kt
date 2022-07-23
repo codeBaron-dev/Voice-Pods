@@ -8,7 +8,7 @@ import com.codebaron.voicepods.repository.BASE_URL_HEADER_2
 import com.codebaron.voicepods.repository.BASE_URL_HEADER_2_KEY
 
 /**
- * @author Anyanwu Nicholas
+ * @author Anyanwu Nicholas(codeBaron)
  * @since Jul 23 - 2022
  * @NoteToFutureMe This file will and contains shared functions used across this app,
  * only add dynamic functions and ensure each functions are well documented
