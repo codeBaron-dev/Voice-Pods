@@ -1,8 +1,8 @@
 package com.codebaron.voicepods.hiltinjection
 
+import com.codebaron.voicepods.mvvm.RequestRepositories
 import com.codebaron.voicepods.repository.ApiEndPoint
 import com.codebaron.voicepods.repository.Repositories
-import com.codebaron.voicepods.repository.RepositoriesImplementation
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,5 +23,5 @@ class RepositoryModule {
     @Provides
     @Singleton
     fun providerNewsRepository(provider: ApiEndPoint): Repositories =
-        RepositoriesImplementation(provider)
+        RequestRepositories(provider)
 }
