@@ -18,7 +18,7 @@ interface ApiEndPoint {
      * @param searchContent
      * @param language
      * @param safetyMode
-     * @return Podcasts
+     * @return Response<[Podcasts]>
      */
     @GET(FULL_TEXT_SEARCH)
     suspend fun searchPodcast(
@@ -30,7 +30,7 @@ interface ApiEndPoint {
 
     /**
      * @param headers
-     * @return PodcastGenres
+     * @return Response<[PodcastGenres]>
      */
     @GET(GENRES)
     suspend fun getPodcastGenre(@HeaderMap headers: Map<String, String>): Response<PodcastGenres>

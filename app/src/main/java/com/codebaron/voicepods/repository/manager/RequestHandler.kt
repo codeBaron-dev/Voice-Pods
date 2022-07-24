@@ -1,30 +1,19 @@
 package com.codebaron.voicepods.repository.manager
 
-import coil.network.HttpException
-import okhttp3.ResponseBody
 import retrofit2.Response
 
 /**
  * @author Anyanwu Nicholas(codeBaron)
  * @since Jul 23 - 2022
  */
-abstract class BaseServices {
-
-    /**
-     * @param message
-     */
-    protected abstract fun parseCustomErrorMessage(message: ResponseBody?): HttpException
-
-    /**
-     * @return NullPointerException
-     */
-    protected abstract fun nullResponseBody(): NullPointerException
-
+class RequestHandler {
     /**
      * @param call
-     * @return Result<T?>
+     * @return [ResponseResult]<T>
+     * @NoteToFutureMes this file handles all retrofit network calls and returns the
+     * request responseBody
      */
-    protected suspend fun <T: Any> apiCall(call: suspend () -> Response<T>): ResponseResult<T> {
+    suspend fun <T : Any> apiCall(call: suspend () -> Response<T>): ResponseResult<T> {
         val response: Response<T>
         try {
             response = call.invoke()
@@ -33,10 +22,11 @@ abstract class BaseServices {
         }
         return if (!response.isSuccessful) {
             val errorBody = response.errorBody()
-            ResponseResult.Error(parseCustomErrorMessage(errorBody))
+            //TODO: create a custom object to map errorBody
+            ResponseResult.Error(Exception())
         } else {
             return if (response.body() == null) {
-                ResponseResult.NullException(nullResponseBody())
+                ResponseResult.NullException(NullPointerException())
             } else {
                 ResponseResult.Success(response.body())
             }
